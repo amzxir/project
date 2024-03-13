@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": "1ed5",
+      "email": "olivier@mail.com",
+      "password": "bestPassw0rd"
+    },
+    {
+      "id": "371f",
+      "email": "amirreza79ahmadi@gmail.com",
+      "password": "123456789"
+    }
+  ],
+  "login": [
+    {
+      "id": "f8c0",
+      "email": "olivier@mail.com",
+      "password": "bestPassw0rd"
+    },
+    {
+      "id": "ddea",
+      "email": "amirreza79ahmadi@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "14f7",
+      "email": "amirreza79ahmadi@gmail.com",
+      "password": "1234567890"
+    }
+  ]
+}
