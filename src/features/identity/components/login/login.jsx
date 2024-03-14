@@ -41,7 +41,7 @@ const Login = () => {
                                 <label className="form-label"> ایمیل</label>
                                 <input
                                     {...register("email", { required: 'فیلد شماره  ایمیل الزامی است' })}
-                                    className={`form-control form-control-lg ${errors.mobile && 'is-invalid'}`}
+                                    className={`form-control form-control-lg ${errors.email && 'is-invalid'}`}
                                 />
                                 {
                                     errors.email && errors.email.type === 'required' && (
@@ -89,8 +89,9 @@ export async function loginAction({ request }) {
     const data = Object.fromEntries(formData)
 
     const response = await HttpService.post('/login', data)
-    // if (response.status === 200) {
-    //     localStorage.setItem('token', response?.data.token)
-    //     return redirect('/')
-    // }
+    console.log(response)
+    if (response.status === 201) {
+        localStorage.setItem('token', response?.data.id)
+        return redirect('/')
+    }
 }
