@@ -123,6 +123,6 @@ export default Register;
 export async function submitAction({ request }) {
     const formData = await request.formData();
     const data = Object.fromEntries(formData);
-    const response = await HttpService.post("/users", data);
+    const response = await HttpService.post("/register", data);
     return response.status === 201;
 } 

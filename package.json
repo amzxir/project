@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "server": "json-server --watch db.json --port 8000"
+    "static": "./node_modules/json-server/public",
+    "server": "json-server -p 3001 -w db.json -s ./node_modules/json-server/public"
   },
   "dependencies": {
     "axios": "^1.6.7",
