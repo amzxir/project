@@ -2,6 +2,9 @@ import { RouterProvider } from "react-router-dom";
 import router from "./router";
 import { useAppContext } from "./context/app/app-context";
 import { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
+
 
 function App() {
 
@@ -22,6 +25,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <ToastContainer rtl />
     </>
   )
 }
