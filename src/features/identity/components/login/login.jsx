@@ -97,7 +97,7 @@ export async function loginAction({ request }) {
     } else {
         if (findPassword.length !== 0) {
             toast.success('Success');
-            sessionStorage.setItem('token', username);
+            localStorage.setItem('token', 'eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ');
             return redirect('/')
         } else {
             toast.error('Please Enter valid credentials');
