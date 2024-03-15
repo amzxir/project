@@ -24,12 +24,12 @@ const Sidebar = () => {
                         </NavLink>
                     </li>
                     <li className="sidebar-item">
-                        <NavLink className={({isActive}) => isActive ? 'sidebar-link active' : 'sidebar-link'} to="/">
+                        <NavLink className={({isActive}) => isActive ? 'sidebar-link active' : 'sidebar-link'} to="create-adv">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-video align-middle me-2">
                                 <polygon points="23 7 16 12 23 17 23 7"></polygon>
                                 <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
                             </svg>
-                            <span className="align-middle me-2">ثبت آگهیآگهی</span>
+                            <span className="align-middle me-2">ایجاد آگهی</span>
                         </NavLink>
                     </li>
                 </ul>
