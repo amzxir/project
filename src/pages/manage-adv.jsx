@@ -4,18 +4,21 @@ import { Suspense, useState } from "react"
 import { toast } from "react-toastify"
 import AdvLists from "../features/adv-manage/components/adv-lists"
 import Modal from "../components/modal"
-import { useAdvContext } from "../context/app/adv-context"
+import AdvUpdate from "../features/adv-manage/components/adv-update"
+import { useAdvContext } from "../features/adv-manage/components/adv-context"
 
 const ManageAdv = () => {
 
     const { adv } = useAdvContext()
 
-    const data = useLoaderData();
+    const data = useLoaderData()
 
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
-    const [showDeleteModal, setShowDeleteModal] = useState(false);
-    const [selectedAdv, setSelectedAdv] = useState();
+    const [showDeleteModal, setShowDeleteModal] = useState(false)
+    const [selectedAdv, setSelectedAdv] = useState()
+    const [showEditAdv , setShowEditAdv] = useState(false)
+
 
     const deleteAdv = (categoryId) => {
         setSelectedAdv(categoryId);
@@ -58,9 +61,9 @@ const ManageAdv = () => {
         <>
             <div className="row">
                 <div className="col-12">
-                    {/* {
-                        (showAddcategory || category) && <AddOrUpdateCategory setShowAddCategory={setShowAddCategory} />
-                    } */}
+                    {
+                        (showEditAdv || adv) && <AdvUpdate setShowEditAdv={setShowEditAdv} />
+                    }
                     <Suspense fallback={<p>... درحال دریافت اطلاعات</p>}>
                         <Await resolve={data.adv}>
                             {

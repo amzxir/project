@@ -6,7 +6,7 @@ import MainLayouts from "./layouts/MianLayouts/main-layouts";
 import Adv, { advLodear } from "./pages/adv";
 import CreateAdv from "./pages/create-adv";
 import AdvDetails, { detailsAdvLoader } from "./features/adv/components/adv-details";
-import { AdvProvider } from "./context/app/adv-context";
+import { AdvProvider } from "./features/adv-manage/components/adv-context";
 import ManageAdv, { advManageLoader } from "./pages/manage-adv";
 
 const router = createBrowserRouter([
