@@ -26,7 +26,7 @@ const Login = () => {
             <div className="text-center mt-4">
                 <h1 className="h2">پلتفرم فروش مسکن</h1>
                 <p className="lead">
-                    جهت ورود لازم است از طریق موبایل و رمز عبور خود اقدام کنید
+                    جهت ورود لازم است از طریق ایمیل و رمز عبور خود اقدام کنید
                 </p>
                 <p className="lead">
                     قبلا ثبت نام نکرده اید؟
@@ -39,14 +39,14 @@ const Login = () => {
                     <div className="m-sm-4">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="mb-3">
-                                <label className="form-label">نام کاربری</label>
+                                <label className="form-label">ایمیل</label>
                                 <input
-                                    {...register("username", { required: 'فیلد نام کاربری الزامی است' })}
-                                    className={`form-control form-control-lg ${errors.username && 'is-invalid'}`}
+                                    {...register("email", { required: 'فیلد ایمیل الزامی است' })}
+                                    className={`form-control form-control-lg ${errors.email && 'is-invalid'}`}
                                 />
                                 {
-                                    errors.username && errors.username.type === 'required' && (
-                                        <p className="text-danger small fw-bolder mt-1">{errors.username?.message}</p>
+                                    errors.email && errors.email.type === 'required' && (
+                                        <p className="text-danger small fw-bolder mt-1">{errors.email?.message}</p>
                                     )
                                 }
                             </div>
@@ -88,19 +88,25 @@ export default Login;
 export async function loginAction({ request }) {
     const formData = await request.formData();
     const data = Object.fromEntries(formData)
-    const { username, password } = data
+    const { email, password } = data
     const response = await HttpService.get(`/user`)
-    const findUser = response.data.filter(i => i.id === username)
+    const findUser = response.data.filter(i => i.email === email)
     const findPassword = response.data.filter(i => i.password === password)
     if (findUser.length === 0) {
-        toast.error('Please Enter valid username');
+        toast.error('ایمیل اشتباه است مجدد تلاش کنید', {
+            position: 'bottom-left'
+        });
     } else {
         if (findPassword.length !== 0) {
-            toast.success('Success');
+            toast.success('با موفقیت وارد شدید', {
+                position: 'bottom-left'
+            });
             localStorage.setItem('token', 'eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4');
             return redirect('/')
         } else {
-            toast.error('Please Enter valid credentials');
+            toast.error('رمز اشتباه است مجدد تلاش کنید', {
+                position: 'bottom-left'
+            });
         }
     }
 }

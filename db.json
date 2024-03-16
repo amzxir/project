@@ -1,31 +1,19 @@
 {
   "user": [
     {
-      "id": "adminuser",
-      "name": "Nihira",
-      "password": "admin",
+      "id": "1",
       "email": "nihiratechiees@gmail.com",
-      "phone": "8989898989",
-      "country": "usa",
-      "address": "",
-      "role": "admin",
-      "gender": "female"
+      "password": "12345678"
     },
     {
-      "id": "ntuser",
-      "name": "Fullname",
-      "password": "ntuser",
+      "id": "2",
       "email": "email@email.com",
-      "phone": "56778889989",
-      "country": "singapore",
-      "address": "address1\naddrees2",
-      "role": "user",
-      "gender": "male"
+      "password": "124789"
     },
     {
-      "id": "amzxir",
+      "id": "205f",
       "email": "amirreza79ahmadi@gmail.com",
-      "password": "123456"
+      "password": "amirreza1"
     }
   ],
   "roleaccess": [

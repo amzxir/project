@@ -36,7 +36,7 @@ const Register = () => {
             <div className="text-center mt-4">
                 <h1 className="h2">پلتفرم فروش مسکن</h1>
                 <p className="lead">
-                    جهت ورود لازم است از طریق موبایل و رمز عبور خود اقدام کنید
+                    جهت ورود لازم است از طریق ایمیل و رمز عبور خود اقدام کنید
                 </p>
                 <p className="lead">
                     قبلا ثبت نام نکرده اید؟
@@ -48,18 +48,6 @@ const Register = () => {
                 <div className="card-body">
                     <div className="m-sm-4">
                         <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="mb-3">
-                                <label className="form-label">نام کاربری</label>
-                                <input
-                                    {...register("id", { required: 'فیلد نام کاربری الزامی است.' })}
-                                    className={`form-control form-control-lg ${errors.id && 'is-invalid'}`}
-                                />
-                                {
-                                    errors.id && errors.id.type === "required" && (
-                                        <p className="text-danger small fw-bolder mt-1">{errors.id?.message}</p>
-                                    )
-                                }
-                            </div>
                             <div className="mb-3">
                                 <label className="form-label">ایمیل</label>
                                 <input
