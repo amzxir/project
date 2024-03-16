@@ -9,16 +9,18 @@ const CreateAdv = () => {
 
     const [position, setPosition] = useState(null)
 
-    const { register, handleSubmit, formState: { errors }, setValue } = useForm();
+    const { register, handleSubmit, formState: { errors }, setValue, reset } = useForm();
 
     const onSubmit = async (data) => {
         const { lat, lng } = position
         const dataProvider = { ...data, lat, lng }
 
         try {
-            const response = await HttpService.post('/advertising' , dataProvider);
+            const response = await HttpService.post('/advertising', dataProvider);
             if (response.status === 201) {
-                toast.success("create adv")
+                reset()
+                setPosition(null)
+                return toast.success("create adv")
             }
         } catch (error) {
             console.error(error);
@@ -64,7 +66,7 @@ const CreateAdv = () => {
                         <div className="col-md-12 mb-1">
                             <label className="form-label">شماره موبایل</label>
                             <input
-                                {...register("mobile", { required: true })}
+                                {...register("mobile", { required: true , minLength: 11, maxLength: 11 })}
                                 type="number"
                                 style={{ direction: 'ltr' }}
                                 className={`form-control form-control-lg ${errors.mobile && 'is-invalid'}`}
@@ -72,6 +74,11 @@ const CreateAdv = () => {
                             {
                                 errors.mobile && errors.mobile.type === 'required' && (
                                     <p className="text-danger small fw-bolder mt-1">فیلد شماره موبایل الزامی است.</p>
+                                )
+                            }
+                            {
+                                errors.mobile && (errors.mobile.type === 'minLength' || errors.mobile.type === 'maxLength') && (
+                                    <p className="text-danger small fw-bolder mt-1">موبایل باید 11 رقم باشد</p>
                                 )
                             }
                         </div>

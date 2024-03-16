@@ -5,6 +5,7 @@ import Register, { submitAction } from "./features/identity/components/register/
 import MainLayouts from "./layouts/MianLayouts/main-layouts";
 import Adv, { advLodear } from "./pages/adv";
 import CreateAdv from "./pages/create-adv";
+import AdvDetails, { detailsAdvLoader } from "./features/adv/components/adv-details";
 
 const router = createBrowserRouter([
     {
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
             {
                 path:'create-adv',
                 element:<CreateAdv/>
+            },
+            {
+                path: 'adv-details/:id',
+                element: <AdvDetails />,
+                loader:detailsAdvLoader
             }
         ]
     },
