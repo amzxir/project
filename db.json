@@ -58,31 +58,24 @@
       "havedelete": false
     }
   ],
-  "customer": [
+  "advertising": [
     {
-      "code": 1,
-      "name": "Chris",
-      "email": "chris@in.com"
+      "id": "cdc8",
+      "name": "Amir Ahmadi",
+      "mobile": "09199954356",
+      "address": "پلاک ۱۱۷ واحد ۷ طبفه ۴",
+      "description": "طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی",
+      "lat": 35.6709645,
+      "lng": 51.3406524
     },
     {
-      "code": 2,
-      "name": "Lynn",
-      "email": "lynn@in.com"
-    },
-    {
-      "code": 3,
-      "name": "Tim",
-      "email": "tim@in.com"
-    },
-    {
-      "code": 4,
-      "name": "Southee",
-      "email": "southee@in.com"
-    },
-    {
-      "code": 5,
-      "name": "boult",
-      "email": "bould@in.com"
+      "id": "ac1c",
+      "name": "Amir Ahmadi",
+      "mobile": "09199954356",
+      "address": "پلاک ۱۱۷ واحد ۷ طبفه ۴",
+      "description": "طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی",
+      "lat": 35.6709645,
+      "lng": 51.3406524
     }
   ]
 }

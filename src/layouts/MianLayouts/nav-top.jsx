@@ -6,8 +6,6 @@ const NavTop = () => {
 
     const { chnageSidebar } = useAppContext();
 
-    console.log(chnageSidebar)
-
     const navigate = useNavigate();
 
     const logout = () => {

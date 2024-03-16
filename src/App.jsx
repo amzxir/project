@@ -4,7 +4,7 @@ import { useAppContext } from "./context/app/app-context";
 import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
-
+import 'leaflet/dist/leaflet.css';
 
 function App() {
 
