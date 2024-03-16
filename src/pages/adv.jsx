@@ -35,7 +35,6 @@ export async function advLodear({ request }) {
 }
 
 const loadAdv = async (request) => {
-
     const page = new URL(request.url).searchParams.get('page') || 1;
     const pageSize = import.meta.env.VITE_PAGE_SIZE;
     let url = '/advertising';

@@ -12,18 +12,21 @@ const CreateAdv = () => {
     const { register, handleSubmit, formState: { errors }, setValue, reset } = useForm();
 
     const onSubmit = async (data) => {
-        const { lat, lng } = position
-        const dataProvider = { ...data, lat, lng }
-
-        try {
-            const response = await HttpService.post('/advertising', dataProvider);
-            if (response.status === 201) {
-                reset()
-                setPosition(null)
-                return toast.success("create adv")
+        if (position !== null) {
+            const { lat, lng } = position
+            const dataProvider = { ...data, lat, lng }
+            try {
+                const response = await HttpService.post('/advertising', dataProvider);
+                if (response.status === 201) {
+                    reset()
+                    setPosition(null)
+                    return toast.success("create adv")
+                }
+            } catch (error) {
+                console.error(error);
             }
-        } catch (error) {
-            console.error(error);
+        } else {
+            toast.error("محل دقیق را روی نقشه پیدا کنید")
         }
     }
 
@@ -66,7 +69,7 @@ const CreateAdv = () => {
                         <div className="col-md-12 mb-1">
                             <label className="form-label">شماره موبایل</label>
                             <input
-                                {...register("mobile", { required: true , minLength: 11, maxLength: 11 })}
+                                {...register("mobile", { required: true, minLength: 11, maxLength: 11 })}
                                 type="number"
                                 style={{ direction: 'ltr' }}
                                 className={`form-control form-control-lg ${errors.mobile && 'is-invalid'}`}
