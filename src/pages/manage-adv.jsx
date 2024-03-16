@@ -3,11 +3,56 @@ import { HttpService } from "@core/http-service"
 import { Suspense, useState } from "react"
 import { toast } from "react-toastify"
 import AdvLists from "../features/adv-manage/components/adv-lists"
+import Modal from "../components/modal"
+import { useAdvContext } from "../context/app/adv-context"
 
 const ManageAdv = () => {
 
+    const { adv } = useAdvContext()
+
     const data = useLoaderData();
 
+    const navigate = useNavigate();
+
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const [selectedAdv, setSelectedAdv] = useState();
+
+    const deleteAdv = (categoryId) => {
+        setSelectedAdv(categoryId);
+        setShowDeleteModal(true);
+    }
+
+    const handleDeleteAdv = async () => {
+        setShowDeleteModal(false);
+        const response = HttpService.delete(`/advertising/${selectedAdv}`);
+
+        toast.promise(
+            response, {
+            pending: 'در حال دریافت اطلاعات ...',
+            success: {
+                render() {
+                    const url = new URL(window.location.href);
+                    navigate(url.pathname + url.search);
+                    return 'عملیات با موفقیت انجام شد'
+                }
+            },
+            error: {
+                render({ data }) {
+                    if (data.response.status === 400) {
+                        return ('categoryList' + data.response.data.code)
+                    } else {
+                        return 'خطا در اجرای عملیات'
+                    }
+                }
+            }
+
+        }, {
+            position: 'bottom-left'
+        }
+        )
+
+
+    }
 
     return (
         <>
@@ -19,16 +64,16 @@ const ManageAdv = () => {
                     <Suspense fallback={<p>... درحال دریافت اطلاعات</p>}>
                         <Await resolve={data.adv}>
                             {
-                                (loaderAdvs) => <AdvLists advertising={loaderAdvs} />
+                                (loaderAdvs) => <AdvLists advertising={loaderAdvs} deleteAdv={deleteAdv} />
                             }
                         </Await>
                     </Suspense>
                 </div>
             </div>
-            {/* <Modal isOpen={showDeleteModal} close={setShowDeleteModal} title="حذف" body="آیا از حذف این دسته اطمینان دارید ؟" >
-                <button type="button" className="btn btn-secondary fw-bolder" onClick={() => setShowDeleteModal(false)}>انصراف</button>
-                <button type="button" className="btn btn-primary fw-bolder" onClick={handleDeleteCategory}>حذف</button>
-            </Modal> */}
+            <Modal isOpen={showDeleteModal} close={setShowDeleteModal} title="حذف" body="آیا از حذف این اگهی اطمینان دارید ؟">
+                    <button type="button" className="btn btn-secondary fw-bolder" onClick={() => setShowDeleteModal(false)}>انصراف</button>
+                    <button type="button" className="btn btn-primary fw-bolder" onClick={handleDeleteAdv}>حذف</button>
+            </Modal>
         </>
     )
 }

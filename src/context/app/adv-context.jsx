@@ -4,10 +4,10 @@ const AdvContext = createContext();
 
 
 const AdvProvider = ({ children }) => {
-    const [category, setCategory] = useState();
+    const [adv, setAdv] = useState();
 
     return (
-        <AdvContext.Provider value={{ category, setCategory }}>
+        <AdvContext.Provider value={{ adv, setAdv }}>
             {children}
         </AdvContext.Provider>
     )

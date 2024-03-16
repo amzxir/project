@@ -118,15 +118,6 @@
       "lng": 51.340652
     },
     {
-      "id": "42cb",
-      "name": "sadsad",
-      "mobile": "21312312333",
-      "address": "fdsdf",
-      "description": "sdfsdfsdfsdf",
-      "lat": 35.6709699,
-      "lng": 51.3406522
-    },
-    {
       "id": "76be",
       "name": "Amir Ahmadi",
       "mobile": "09199954356",
@@ -141,15 +132,6 @@
       "mobile": "09127031823",
       "address": "پلاک ۱۱۷ واحد ۷ طبفه ۴",
       "description": "asdasdasdasdasd",
-      "lat": 35.6709668,
-      "lng": 51.340651
-    },
-    {
-      "id": "1fcf",
-      "name": "Amir Ahmadi",
-      "mobile": "09127031823",
-      "address": "پلاک ۱۱۷ واحد ۷ طبفه ۴",
-      "description": "asdasdasd",
       "lat": 35.6709668,
       "lng": 51.340651
     }
