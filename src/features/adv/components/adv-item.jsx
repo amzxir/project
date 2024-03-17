@@ -14,7 +14,7 @@ const AdvItem = ({ name, mobile, address, description, lat, lng , id}) => {
                 </h4>
             </div>
             <div className="card-body px-4 pt-2">
-                <p className="text-truncate-3">{description}</p>
+                <p className="text-truncate-3">{`${description.slice(0,46)}...`}</p>
             </div>
         </div>
     )

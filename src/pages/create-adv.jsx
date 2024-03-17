@@ -20,13 +20,17 @@ const CreateAdv = () => {
                 if (response.status === 201) {
                     reset()
                     setPosition(null)
-                    return toast.success("create adv")
+                    return toast.success("آگهی شما با موفقیت ثبت شد" , {
+                        position:'bottom-left'
+                    })
                 }
             } catch (error) {
                 console.error(error);
             }
         } else {
-            toast.error("محل دقیق را روی نقشه پیدا کنید")
+            toast.error("محل دقیق را روی نقشه پیدا کنید" , {
+                position:'bottom-left'
+            })
         }
     }
 
