@@ -5,7 +5,7 @@ import { toast } from "react-toastify"
 import { MapContainer, TileLayer } from "react-leaflet"
 import { useNavigate } from "react-router-dom"
 import { useAdvContext } from "./adv-context"
-import LocationMarker from "../../../components/location-marker";
+import LocationMarker from "@components/location-marker";
 
 const AdvUpdate = ({ setShowEditAdv }) => {
 

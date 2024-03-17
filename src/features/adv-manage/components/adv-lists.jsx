@@ -1,6 +1,6 @@
 import { useNavigation } from "react-router-dom";
-import Pagination from "../../../components/pagination";
-import Spinner from "../../../components/spinner";
+import Pagination from "@components/pagination";
+import Spinner from "@components/spinner";
 import { useAdvContext } from "./adv-context";
 
 const AdvLists = ({ advertising: { data, items }, deleteAdv }) => {

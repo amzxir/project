@@ -1,7 +1,7 @@
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 import { Link, Await, defer, useLoaderData } from "react-router-dom";
 import { HttpService } from "@core/http-service";
-import AdvList from "../features/adv/components/adv-list";
+import AdvList from "@features/adv/components/adv-list";
 
 
 const Adv = () => {

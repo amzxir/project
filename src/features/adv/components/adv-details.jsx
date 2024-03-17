@@ -1,7 +1,7 @@
-import { HttpService } from "@core/http-service";
 import { Suspense } from "react";
-import { Await, defer, useLoaderData } from "react-router-dom";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet"
+import { Await, defer, useLoaderData } from "react-router-dom";
+import { HttpService } from "@core/http-service";
 
 
 

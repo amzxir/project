@@ -1,8 +1,8 @@
+import { useEffect } from "react"
 import { Outlet, useNavigate } from "react-router-dom"
 import Footer from "./footer"
 import NavTop from "./nav-top"
 import Sidebar from "./sidebar"
-import { useEffect } from "react"
 
 const MainLayouts = () => {
 

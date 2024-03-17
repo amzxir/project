@@ -1,4 +1,4 @@
-import Pagination from "../../../components/pagination"
+import Pagination from "@components/pagination"
 import AdvItem from "./adv-item"
 
 const AdvList = ({ advertising: { data, items } }) => {

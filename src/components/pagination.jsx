@@ -1,5 +1,5 @@
-import _ from "lodash";
 import { useSearchParams } from "react-router-dom";
+import _ from "lodash";
 
 const Pagination = ({ totalRecords, pageSize = import.meta.env.VITE_PAGE_SIZE }) => {
 

@@ -3,7 +3,7 @@ import { MapContainer, TileLayer } from "react-leaflet"
 import { HttpService } from "@core/http-service"
 import { useForm } from "react-hook-form"
 import { toast } from "react-toastify"
-import LocationMarker from "../components/location-marker"
+import LocationMarker from "@components/location-marker"
 
 const CreateAdv = () => {
 

@@ -1,11 +1,11 @@
+import { Suspense, useState } from "react"
 import { Await, defer, useLoaderData, useNavigate } from "react-router-dom"
 import { HttpService } from "@core/http-service"
-import { Suspense, useState } from "react"
 import { toast } from "react-toastify"
-import AdvLists from "../features/adv-manage/components/adv-lists"
-import Modal from "../components/modal"
-import AdvUpdate from "../features/adv-manage/components/adv-update"
-import { useAdvContext } from "../features/adv-manage/components/adv-context"
+import AdvLists from "@features/adv-manage/components/adv-lists"
+import Modal from "@components/modal"
+import AdvUpdate from "@features/adv-manage/components/adv-update"
+import { useAdvContext } from "@features/adv-manage/components/adv-context"
 
 const ManageAdv = () => {
 

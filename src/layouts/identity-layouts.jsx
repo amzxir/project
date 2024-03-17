@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import ChangeTheme from "../components/chnage-theme";
+import ChangeTheme from "@components/chnage-theme";
 
 const IdentityLayouts = () => {
     return (
