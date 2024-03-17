@@ -8,11 +8,14 @@ import CreateAdv from "@pages/create-adv";
 import AdvDetails, { detailsAdvLoader } from "@features/adv/components/adv-details";
 import { AdvProvider } from "@features/adv-manage/components/adv-context";
 import ManageAdv, { advManageLoader } from "@pages/manage-adv";
+import NotFound from "@pages/not-found";
+import UnhandledException from "@pages/unhandled-exception";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <MainLayouts />,
+        errorElement:<UnhandledException/>,
         children: [
             {
                 index: true,
@@ -53,6 +56,10 @@ const router = createBrowserRouter([
                 action: submitAction
             }
         ]
+    },
+    {
+        path:'*',
+        element:<NotFound/>
     }
 ])
 
